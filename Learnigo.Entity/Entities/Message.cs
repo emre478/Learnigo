@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Learnigo.Entity.Entities
 {
-    public class Massage
+    public class Message
     {
-        public int MassegeId { get; set; }
+        public int MessageId { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Subject { get; set; }
