@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Learnigo.Entity.Entities
+namespace Learnigo.DTO.Dtos.SubscribeDtos
 {
-    public class Subscribe
+    public class UpdateSubscribeDto
     {
         public int SubscribeId { get; set; }
         public string Email { get; set; }
