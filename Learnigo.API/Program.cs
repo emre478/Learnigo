@@ -8,6 +8,7 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddDbContext<LearnigoContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSqlConnection")));
