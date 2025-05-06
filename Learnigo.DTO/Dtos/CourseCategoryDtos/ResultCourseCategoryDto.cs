@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Learnigo.DTO.Dtos.CourseCatagoryDtos
+namespace Learnigo.DTO.Dtos.CourseCategoryDtos
 {
     public class ResultCourseCategoryDto
     {

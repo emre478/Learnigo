@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Learnigo.DTO.Dtos.CourseCatagoryDtos;
+using Learnigo.DTO.Dtos.CourseCategoryDtos;
 using Learnigo.Entity.Entities;
 
 namespace Learnigo.API.Mapping

@@ -8,6 +8,17 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
+
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddDbContext<LearnigoContext>(options =>
@@ -26,6 +37,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors();  // UseRouting'in üstünde deðil altýnda olmalý
 
 app.UseHttpsRedirection();
 
@@ -34,3 +46,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+app.Run("http://0.0.0.0:7062");

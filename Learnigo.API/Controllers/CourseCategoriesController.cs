@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Learnigo.Business.Abstract;
 using Learnigo.DTO.Dtos.AboutDtos;
-using Learnigo.DTO.Dtos.CourseCatagoryDtos;
+using Learnigo.DTO.Dtos.CourseCategoryDtos;
 using Learnigo.Entity.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

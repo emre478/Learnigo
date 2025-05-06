@@ -5,15 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Learnigo.DTO.Dtos.CourseCategoryDtos
+namespace Learnigo.WebUI.Dtos.CourseDtos
 {
-    public class UpdateCourseCategoryDto
+    public class UpdateCourseDto
     {
+        public int CourseId { get; set; }
+        public string CourseName { get; set; }
+        public string Image { get; set; }
         public int CourseCategoryId { get; set; }
-        public string CategoryName { get; set; }
-        public string Icon { get; set; }
-        public string Description { get; set; }
+        public decimal Price { get; set; }
         public bool IsShow { get; set; }
-        
     }
 }
