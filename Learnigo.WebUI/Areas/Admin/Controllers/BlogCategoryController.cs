@@ -32,12 +32,14 @@ namespace Learnigo.WebUI.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateBlogCategory(CreateBlogCategoryDto createBlogCategoryDto)
         {
+
             var validator = new BlogCategoryValidator();
             var result = await validator.ValidateAsync(createBlogCategoryDto);
             if (!result.IsValid)
             {
                 foreach (var x in result.Errors)
                 {
+                    ModelState.Clear();
                     ModelState.AddModelError(x.PropertyName, x.ErrorMessage);
                 }
                 return View();
