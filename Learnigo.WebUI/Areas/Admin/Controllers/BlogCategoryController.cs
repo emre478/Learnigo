@@ -1,5 +1,6 @@
 ﻿using Learnigo.WebUI.Dtos.BlogCategoryDtos;
 using Learnigo.WebUI.Helpers;
+using Learnigo.WebUI.Validators;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Learnigo.WebUI.Areas.Admin.Controllers
@@ -31,6 +32,16 @@ namespace Learnigo.WebUI.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateBlogCategory(CreateBlogCategoryDto createBlogCategoryDto)
         {
+            var validator = new BlogCategoryValidator();
+            var result = await validator.ValidateAsync(createBlogCategoryDto);
+            if (!result.IsValid)
+            {
+                foreach (var x in result.Errors)
+                {
+                    ModelState.AddModelError(x.PropertyName, x.ErrorMessage);
+                }
+                return View();
+            }
             await _client.PostAsJsonAsync("blogcategories", createBlogCategoryDto);
             return RedirectToAction(nameof(Index));
         }
