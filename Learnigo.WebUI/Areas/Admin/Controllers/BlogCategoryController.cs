@@ -19,9 +19,9 @@ namespace Learnigo.WebUI.Areas.Admin.Controllers
 
         public async Task<IActionResult> DeleteBlogCategory(int id)
         {
-            await _client.DeleteAsync($"blogcatagories/{id}");
+            await _client.DeleteAsync($"blogcategories/{id}");
             return RedirectToAction(nameof(Index));
-
+             
         }
 
         public IActionResult CreateBlogCategory()

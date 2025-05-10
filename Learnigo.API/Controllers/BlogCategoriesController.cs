@@ -10,12 +10,12 @@ namespace Learnigo.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BlogCatagoriesController(IGenericService<BlogCategory> _blogCatagoryService, IMapper _mapper) : ControllerBase
+    public class BlogCategoriesController(IGenericService<BlogCategory> _blogCategoryService, IMapper _mapper) : ControllerBase
     {
         [HttpGet]
         public IActionResult Get()
         {
-            var values = _blogCatagoryService.TGetList();
+            var values = _blogCategoryService.TGetList();
             return Ok(values);
         }
 
@@ -23,14 +23,14 @@ namespace Learnigo.API.Controllers
 
         public IActionResult GetById(int id)
         {
-            var value = _blogCatagoryService.TGetById(id);
+            var value = _blogCategoryService.TGetById(id);
             return Ok(value);
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            _blogCatagoryService.TDelete(id);
+            _blogCategoryService.TDelete(id);
             return Ok("Blog Kategori Alanı Silindi");
         }
 
@@ -38,7 +38,7 @@ namespace Learnigo.API.Controllers
         public IActionResult Create(CreateBlogCategoryDto createBlogCategoryDto)
         {
             var newValue = _mapper.Map<BlogCategory>(createBlogCategoryDto);
-            _blogCatagoryService.TCreate(newValue);
+            _blogCategoryService.TCreate(newValue);
             return Ok("Yeni Blog Kategori Alanı Oluşturuldu");
         }
 
@@ -46,7 +46,7 @@ namespace Learnigo.API.Controllers
         public IActionResult Update(UpdateBlogCategoryDto updateBlogCategoryDto)
         {
             var value = _mapper.Map<BlogCategory>(updateBlogCategoryDto);
-            _blogCatagoryService.TUpdate(value);
+            _blogCategoryService.TUpdate(value);
             return Ok("Blog Kategori Alanı Güncellendi");
 
         }
