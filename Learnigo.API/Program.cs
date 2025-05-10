@@ -1,6 +1,7 @@
 using Learnigo.Business.Abstract;
 using Learnigo.Business.Concrete;
 using Learnigo.DataAccess.Abstract;
+using Learnigo.DataAccess.Concrete;
 using Learnigo.DataAccess.Context;
 using Learnigo.DataAccess.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -29,6 +30,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericManager<>));
+builder.Services.AddScoped<IBlogRepository, BlogRepository>();
+builder.Services.AddScoped<IBlogService, BlogManager>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
