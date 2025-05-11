@@ -17,9 +17,18 @@ namespace Learnigo.Business.Concrete
             _blogRepository = blogRepository;
         }
 
+        public Blog TGetBlogWithCategory(int id)
+        {
+
+            return _blogRepository.GetBlogWithCategory(id);
+
+        }
+
         public List<Blog> TGetBlogsWithCategories()
         {
             return _blogRepository.GetBlogsWithCategories();
         }
+
+
     }
 }

@@ -23,5 +23,10 @@ namespace Learnigo.DataAccess.Concrete
         {
             return _lercontext.Blogs.Include(x => x.BlogCategory).ToList();
         }
+
+        public Blog GetBlogWithCategory(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

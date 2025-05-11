@@ -10,5 +10,6 @@ namespace Learnigo.DataAccess.Abstract
     public interface IBlogRepository : IRepository<Blog>
     {
         List<Blog> GetBlogsWithCategories();
+        Blog GetBlogWithCategory(int id);
     }
 }
