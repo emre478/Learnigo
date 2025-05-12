@@ -12,6 +12,6 @@ namespace Learnigo.DTO.Dtos.BlogCategoryDtos
     {
         public int BlogCategoryId { get; set; }
         public string Name { get; set; }
-        public List<ResultBlogDto> Blogs { get; set; }
+       
     }
 }

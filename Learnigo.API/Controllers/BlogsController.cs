@@ -16,7 +16,8 @@ namespace Learnigo.API.Controllers
         public IActionResult Get()
         {
             var values = _blogService.TGetBlogsWithCategories();
-            return Ok(values);
+            var blogs = _mapper.Map<List<ResultBlogDto>>(values);
+            return Ok(blogs);
         }
 
         [HttpGet("{id}")]
