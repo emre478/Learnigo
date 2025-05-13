@@ -13,7 +13,10 @@
 		<th>#</th>
 		<th>Kurs Kategori Adı</th>
 		<th>Açıklama</th>
-		<th>Ana Sayfa Durumu</th>
+		<th>Gösterilme Durumu</th>
+		<th></th>
+
+		<th>Ana Sayfada</th>
 	</tr>
 
 	@foreach (var item in Model)
@@ -29,11 +32,11 @@
 			<td>
 				<button onclick="deleteCourseCategory(@item.CourseCategoryId)" class="btn btn-outline-danger">Sil</button>>
 				<a asp-action="UpdateCourseCategory" asp-controller="CourseCategory" asp-area="Admin" asp-route-id="@item.CourseCategoryId" class="btn btn-outline-info">Güncelle</a>
-				<a asp-action="ShowOnHome" asp-controller="CourseCategory" asp-area="Admin" asp-route-id="@item.CourseCategoryId" class="btn btn-outline-success">Ana Sayfada Göster</a>
-				<a asp-action="DontShowOnHome" asp-controller="CourseCategory" asp-area="Admin" asp-route-id="@item.CourseCategoryId" class="btn btn-outline-secondary">Ana Sayfada Gösterme</a>
-
 			</td>
-
+			<td>
+				<a asp-action="ShowOnHome" asp-controller="CourseCategory" asp-area="Admin" asp-route-id="@item.CourseCategoryId" class="btn btn-outline-success"> Göster</a>
+				<a asp-action="DontShowOnHome" asp-controller="CourseCategory" asp-area="Admin" asp-route-id="@item.CourseCategoryId" class="btn btn-outline-secondary">Gösterme</a>
+			</td>
 		</tr>
 	}
 
