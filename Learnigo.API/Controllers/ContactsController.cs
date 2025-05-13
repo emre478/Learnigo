@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Learnigo.Business.Abstract;
-using Learnigo.DTO.Dtos.AboutDtos;
 using Learnigo.DTO.Dtos.ContactDtos;
 using Learnigo.Entity.Entities;
 using Microsoft.AspNetCore.Http;

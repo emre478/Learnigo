@@ -12,13 +12,13 @@ namespace Learnigo.WebUI.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
 
-            var values = await _client.GetFromJsonAsync<List<ResultContactDto>>("Contacts");
+            var values = await _client.GetFromJsonAsync<List<ResultContactDto>>("Contact");
             return View(values);
         }
 
         public async Task<IActionResult> DeleteContact(int id)
         {
-            await _client.DeleteAsync("Contacts/" + id);
+            await _client.DeleteAsync("Contact" + id);
             return RedirectToAction("Index");
 
         }
@@ -32,14 +32,14 @@ namespace Learnigo.WebUI.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateContact(CreateContactDto createContactDto)
         {
-            await _client.PostAsJsonAsync("Contacts", createContactDto);
+            await _client.PostAsJsonAsync("Contact", createContactDto);
             return RedirectToAction("Index");
         }
         [HttpGet]
         public async Task<IActionResult> UpdateContact(int id)
         {
            
-            var values = await _client.GetFromJsonAsync<UpdateContactDto>("Contacts/" + id);
+            var values = await _client.GetFromJsonAsync<UpdateContactDto>("Contact" + id);
             return View(values);
         }
 
@@ -47,7 +47,7 @@ namespace Learnigo.WebUI.Areas.Admin.Controllers
 
         public async Task<IActionResult> UpdateContact(UpdateContactDto updateContactDto)
         {
-            await _client.PutAsJsonAsync("Contacts", updateContactDto);
+            await _client.PutAsJsonAsync("Contact", updateContactDto);
             return RedirectToAction("Index");
         }
     }
