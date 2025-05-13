@@ -11,10 +11,10 @@
 <table class="table table-hover">
 	<tr>
 		<th>#</th>
-		<th>Adres</th>
-		<th>Telefon</th>
-		<th>Email</th>
-		<th>Harita Url</th>
+		<th>Kurs Kategori Adı</th>
+		<th>İkon</th>
+		<th>Açıklama</th>
+		<th>Ana Sayfa Durumu</th>
 	</tr>
 
 	@foreach (var item in Model)
@@ -22,14 +22,14 @@
 		count++;
 		<tr>
 			<th>@count</th>
-			<td>@item.Address</td>
-			<td>@item.Phone</td>
-			<td>@item.Email</td>
-			<td><a href="@item.MapUrl" target="_blank">Harita Url</a> </td>
+			<td>@item.CategoryName</td>
+			<td>@item.Icon</td>
+			<td>@item.Description</td>
+			<td>@item.IsShow </td>
 
 
 			<td>
-				<button onclick="deleteCourseCategory(@item.CourseCategoryId)" class="btn btn-outline-danger">Sil  </button>>
+				<button onclick="deleteCourseCategory(@item.CourseCategoryId)" class="btn btn-outline-danger">Sil</button>>
 				<a asp-action="UpdateCourseCategory" asp-controller="CourseCategory" asp-area="Admin" asp-route-id="@item.CourseCategoryId" class="btn btn-outline-info">Güncelle</a>
 
 			</td>
