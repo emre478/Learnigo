@@ -18,7 +18,7 @@ namespace Learnigo.WebUI.Areas.Admin.Controllers
 
         public async Task<IActionResult> DeleteContact(int id)
         {
-            await _client.DeleteAsync("Contact" + id);
+            await _client.DeleteAsync("Contact/" + id);
             return RedirectToAction("Index");
 
         }
@@ -39,7 +39,7 @@ namespace Learnigo.WebUI.Areas.Admin.Controllers
         public async Task<IActionResult> UpdateContact(int id)
         {
            
-            var values = await _client.GetFromJsonAsync<UpdateContactDto>("Contact" + id);
+            var values = await _client.GetFromJsonAsync<UpdateContactDto>("Contact/" + id);
             return View(values);
         }
 
