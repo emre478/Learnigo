@@ -1,3 +1,4 @@
+using Learnigo.API.Extensions;
 using Learnigo.Business.Abstract;
 using Learnigo.Business.Concrete;
 using Learnigo.DataAccess.Abstract;
@@ -20,7 +21,7 @@ builder.Services.AddCors(options =>
 });
 
 
-
+builder.Services.AddServiceExtensions();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddDbContext<LearnigoContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSqlConnection")));
@@ -28,10 +29,6 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
-builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericManager<>));
-builder.Services.AddScoped<IBlogRepository, BlogRepository>();
-builder.Services.AddScoped<IBlogService, BlogManager>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
