@@ -19,14 +19,14 @@ namespace Learnigo.DataAccess.Concrete
 
         public void DontShowOnHome(int id)
         {
-            var value = _context.Courses.Find(id);
+            var value = _context.CourseCategories.Find(id);
             value.IsShow = false;
             _context.SaveChanges();
         }   
 
         public void ShowOnHome(int id)
         {
-            var value = _context.Courses.Find(id);
+            var value = _context.CourseCategories.Find(id);
             value.IsShow = true;
             _context.SaveChanges();
         }
