@@ -30,8 +30,9 @@
 
 
 			<td>
-				<button onclick="deleteCourseCategory(@item.CourseCategoryId)" class="btn btn-outline-danger">Sil</button>>
+				<button onclick="deleteCourseCategory(@item.CourseCategoryId)" class="btn btn-outline-danger">Sil</button>
 				<a asp-action="UpdateCourseCategory" asp-controller="CourseCategory" asp-area="Admin" asp-route-id="@item.CourseCategoryId" class="btn btn-outline-info">Güncelle</a>
+
 			</td>
 			<td>
 				<a asp-action="ShowOnHome" asp-controller="CourseCategory" asp-area="Admin" asp-route-id="@item.CourseCategoryId" class="btn btn-outline-success"> Göster</a>

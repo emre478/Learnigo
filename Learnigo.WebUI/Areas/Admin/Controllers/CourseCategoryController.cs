@@ -53,13 +53,13 @@ namespace Learnigo.WebUI.Areas.Admin.Controllers
 
         public async Task<IActionResult> ShowOnHome(int id) 
         {
-            await _client.GetAsync("courseCategories/ShowOnHome" + id);
+            await _client.GetAsync("CourseCategories/ShowOnHome/" + id);
             return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> DontShowOnHome(int id) 
         {
-            await _client.GetAsync("courseCategories/DontShowOnHome" + id);
+            await _client.GetAsync("CourseCategories/DontShowOnHome/" + id);
             return RedirectToAction("Index");
         }
     }
