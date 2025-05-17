@@ -35,7 +35,7 @@ namespace Learnigo.WebUI.Areas.Admin.Controllers
 
         public async Task<IActionResult> DeleteCourse(int id)
         {
-            await _client.DeleteAsync("Course/" + id);
+            await _client.DeleteAsync("Course" + id);
             return RedirectToAction("Index");
 
         }
@@ -56,7 +56,7 @@ namespace Learnigo.WebUI.Areas.Admin.Controllers
         public async Task<IActionResult> UpdateCourse(int id)
         {
             await CourseCategoryDropdown();
-            var values = await _client.GetFromJsonAsync<UpdateCourseDto>("Course/" + id);
+            var values = await _client.GetFromJsonAsync<UpdateCourseDto>("Course" + id);
             return View(values);
         }
 
