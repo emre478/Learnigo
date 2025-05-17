@@ -15,5 +15,6 @@ namespace Learnigo.WebUI.Dtos.CourseCategoryDtos
         public string Description { get; set; }
         public bool IsShow { get; set; }
         public List<ResultCourseDto> Courses { get; set; }
+        
     }
 }
