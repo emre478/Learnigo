@@ -20,7 +20,7 @@ namespace Learnigo.WebUI.Areas.Admin.Controllers
             List<SelectListItem> courseCategories = (from x in courseCategoryList
                                                      select new SelectListItem
                                                      {
-                                                         Text = x.Name,
+                                                         Text = x.CategoryName,
                                                          Value = x.CourseCategoryId.ToString()
                                                      }).ToList();
             ViewBag.CourseCategories = courseCategories;
