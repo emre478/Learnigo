@@ -10,7 +10,7 @@ namespace Learnigo.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CourseController(IGenericService<Course> _courseService, IMapper _mapper ) : ControllerBase
+    public class CourseController(ICourseService _courseService, IMapper _mapper ) : ControllerBase
     {
         [HttpGet]
         public IActionResult Get()
