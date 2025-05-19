@@ -13,7 +13,7 @@
 	<tr>
 		<th>#</th>
 		<th>Gönderen Adı</th>
-		<th> Email</th>
+		<th>Email</th>
 		<th>Konu </th>
 	</tr>
 
@@ -29,7 +29,7 @@
 
 			<td>
 				<button onclick="deleteMessage(@item.MessageId)" class="btn btn-outline-danger">Sil  </button>
-				<a asp-action="UpdateMessage" asp-controller="Message" asp-area="Admin" asp-route-id="@item.MessageId" class="btn btn-outline-info">Güncelle</a>
+				<a asp-action="MessageDetail" asp-controller="Message" asp-area="Admin" asp-route-id="@item.MessageId" class="btn btn-outline-info">Mesajı Aç</a>
 
 			</td>
 
@@ -39,7 +39,7 @@
 </table>
 
 <br />
-<a asp-action="CreateMessage" asp-controller="Message" asp-area="Admin" class="btn btn-outline-primary">Yeni Blog Kategori Ekle</a>
+
 
 <script>
 

@@ -12,43 +12,22 @@ namespace Learnigo.WebUI.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
 
-            var values = await _client.GetFromJsonAsync<List<ResultMessageDto>>("Message");
+            var values = await _client.GetFromJsonAsync<List<ResultMessageDto>>("Messages");
             return View(values);
         }
 
         public async Task<IActionResult> DeleteMessage(int id)
         {
-            await _client.DeleteAsync("Message/" + id);
+            await _client.DeleteAsync("Messages/" + id);
             return RedirectToAction("Index");
 
-        }
+        } 
         [HttpGet]
-        public async Task<IActionResult> CreateMessage()
+        public async Task<IActionResult> MessageDetail(int id)
         {
             
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> CreateMessage(CreateMessageDto createMessageDto)
-        {
-            await _client.PostAsJsonAsync("Message", createMessageDto);
-            return RedirectToAction("Index");
-        }
-        [HttpGet]
-        public async Task<IActionResult> UpdateMessage(int id)
-        {
-            
-            var values = await _client.GetFromJsonAsync<UpdateMessageDto>("Message" + id);
+            var values = await _client.GetFromJsonAsync<ResultMessageDto>("Messages/" + id);
             return View(values);
-        }
-
-        [HttpPost]
-
-        public async Task<IActionResult> UpdateMessage(UpdateMessageDto updateMessageDto)
-        {
-            await _client.PutAsJsonAsync("Message", updateMessageDto);
-            return RedirectToAction("Index");
         }
     }
 }
