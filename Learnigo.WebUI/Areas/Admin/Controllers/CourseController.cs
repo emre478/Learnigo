@@ -15,7 +15,7 @@ namespace Learnigo.WebUI.Areas.Admin.Controllers
 
         public async Task CourseCategoryDropdown()
         {
-            var courseCategoryList = await _client.GetFromJsonAsync<List<ResultCourseCategoryDto>>("courseCategories");
+            var courseCategoryList = await _client.GetFromJsonAsync<List<ResultCourseCategoryDto>>("CourseCategories");
 
             List<SelectListItem> courseCategories = (from x in courseCategoryList
                                                      select new SelectListItem
