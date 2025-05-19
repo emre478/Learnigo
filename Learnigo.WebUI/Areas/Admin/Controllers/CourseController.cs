@@ -67,6 +67,15 @@ namespace Learnigo.WebUI.Areas.Admin.Controllers
             await _client.PutAsJsonAsync("Course", updateCourseDto);
             return RedirectToAction("Index");
         }
-
+        public async Task<IActionResult> ShowOnHome(int id)
+        {
+            await _client.GetAsync("courses/ShowOnHome/" + id);
+            return RedirectToAction("Index");
+        }
+        public async Task<IActionResult> DontShowOnHome(int id)
+        {
+            await _client.GetAsync("courses/DontShowOnHome/" + id);
+            return RedirectToAction("Index");
+        }
     }
 }
