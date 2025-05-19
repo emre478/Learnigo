@@ -8,6 +8,8 @@ namespace Learnigo.Entity.Entities
 {
     public class Course
     {
+        public bool IsShown;
+
         public int CourseId { get; set; }
         public string CourseName { get; set; }
         public string Image { get; set; }
