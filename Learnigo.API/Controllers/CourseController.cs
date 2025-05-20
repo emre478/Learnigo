@@ -68,7 +68,7 @@ namespace Learnigo.API.Controllers
 
         public IActionResult GetActiveCourses()
         {
-            var values = _courseService.TGetFilteredList(x=> x.IsShown==true);
+            var values = _courseService.TGetFilteredList(x=> x.IsShow==true);
             return Ok(values);
         }
     }
