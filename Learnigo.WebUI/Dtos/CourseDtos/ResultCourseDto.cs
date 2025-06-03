@@ -1,10 +1,4 @@
-﻿using Learnigo.Entity.Entities;
-using Learnigo.WebUI.Dtos.CourseCategoryDtos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Learnigo.WebUI.Dtos.CourseCategoryDtos;
 
 namespace Learnigo.WebUI.Dtos.CourseDtos
 {
